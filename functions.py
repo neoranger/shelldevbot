@@ -54,19 +54,19 @@ def command_new_user(m):
     cid = m.chat.id
     grupo = m.chat.title
     if (m.new_chat_member.username != None and m.new_chat_member.first_name != None and m.new_chat_member.last_name != None):
-        bot.send_message(cid, "Bienvenido {0} {1} !! A.K.A. @{2} a {3}. Te sugerimos leer las reglas en el mensaje anclado o click en #Normas.".format(m.new_chat_member.first_name, m.new_chat_member.last_name, m.new_chat_member.username, grupo))
+        bot.send_message(cid, "Bienvenido {0} {1} !! A.K.A. @{2} a {3}. Te sugerimos leer las reglas.".format(m.new_chat_member.first_name, m.new_chat_member.last_name, m.new_chat_member.username, grupo))
     elif (m.new_chat_member.username != None and m.new_chat_member.first_name == None and m.new_chat_member.last_name == None):
-        bot.send_message(cid, "Bienvenido!! @{0} a {1}. No tenés nombres, podrías completar los datos. Te sugerimos leer las reglas en el mensaje anclado o click en #Normas.".format(m.new_chat_member.username, grupo))
+        bot.send_message(cid, "Bienvenido!! @{0} a {1}. No tenés nombres, podrías completar los datos. Te sugerimos leer las reglas en el mensaje anclado.".format(m.new_chat_member.username, grupo))
     elif (m.new_chat_member.username != None and m.new_chat_member.first_name != None and m.new_chat_member.last_name == None):
-        bot.send_message(cid, "Bienvenido {0} A.K.A. @{1} a {2}. Te sugerimos leer las reglas en el mensaje anclado o click en #Normas.".format(m.new_chat_member.first_name,m.new_chat_member.username, grupo))
+        bot.send_message(cid, "Bienvenido {0} A.K.A. @{1} a {2}. Te sugerimos leer las reglas en el mensaje anclado.".format(m.new_chat_member.first_name,m.new_chat_member.username, grupo))
     elif (m.new_chat_member.username != None and m.new_chat_member.first_name == None and m.new_chat_member.last_name != None):
-        bot.send_message(cid, "Bienvenido {0}!! A.K.A. @{1} a {2}. Te sugerimos leer las reglas en el mensaje anclado o click en #Normas.".format(m.new_chat_member.last_name,m.new_chat_member.username, grupo))
+        bot.send_message(cid, "Bienvenido {0}!! A.K.A. @{1} a {2}. Te sugerimos leer las reglas en el mensaje anclado.".format(m.new_chat_member.last_name,m.new_chat_member.username, grupo))
     elif (m.new_chat_member.username == None and m.new_chat_member.first_name != None and m.new_chat_member.last_name != None):
-        bot.send_message(cid, "Bienvenido {0} {1} a {2}. No tenes alias, seria mejor que te crees uno. Te sugerimos tambien leer las reglas en el mensaje anclado o click en #Normas.".format(m.new_chat_member.first_name,m.new_chat_member.last_name,grupo))
+        bot.send_message(cid, "Bienvenido {0} {1} a {2}. No tenes alias, seria mejor que te crees uno. Te sugerimos tambien leer las reglas en el mensaje anclado.".format(m.new_chat_member.first_name,m.new_chat_member.last_name,grupo))
     elif (m.new_chat_member.username == None and m.new_chat_member.first_name == None and m.new_chat_member.last_name != None):
-        bot.send_message(cid, "Bienvenido {0}!! a {1}. No tenes alias, seria mejor que te crees uno. Te sugerimos tambien leer las reglas en el mensaje anclado o click en #Normas.".format(m.new_chat_member.last_name, grupo))
+        bot.send_message(cid, "Bienvenido {0}!! a {1}. No tenes alias, seria mejor que te crees uno. Te sugerimos tambien leer las reglas en el mensaje anclado.".format(m.new_chat_member.last_name, grupo))
     elif (m.new_chat_member.username == None and m.new_chat_member.first_name != None and m.new_chat_member.last_name == None):
-        bot.send_message(cid, "Bienvenido {0} a {1}. No tenes alias, seria mejor que te crees uno. Te sugerimos tambien leer las reglas en el mensaje anclado o click en #Normas.".format(m.new_chat_member.first_name, grupo))
+        bot.send_message(cid, "Bienvenido {0} a {1}. No tenes alias, seria mejor que te crees uno. Te sugerimos tambien leer las reglas en el mensaje anclado.".format(m.new_chat_member.first_name, grupo))
 
 @bot.message_handler(commands=['about'])
 def command_acerca(m):
@@ -103,13 +103,13 @@ def command_id(m):
 @bot.message_handler(commands=['support'])
 def command_help(message):
     markup = types.InlineKeyboardMarkup()
-    itembtnneo = types.InlineKeyboardButton('NeoRanger', url="telegram.me/NeoRanger")
+    itembtnneo = types.InlineKeyboardButton('Developer', url="telegram.me/NeoRanger")
     itembtnblog = types.InlineKeyboardButton('URL Blog', url="https://www.neositelinux.com")
     itembtnrepo = types.InlineKeyboardButton('Repo Github', url="http://github.com/neoranger/shelldevbot")
     markup.row(itembtnneo)
     markup.row(itembtnblog)
     markup.row(itembtnrepo)
-    bot.send_message(message.chat.id, "Choose one supporter:", reply_markup=markup)
+    bot.send_message(message.chat.id, "Choose an option:", reply_markup=markup)
    
 @bot.message_handler(commands=['neofeed'])
 def neo_feed(m):
