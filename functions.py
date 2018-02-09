@@ -12,7 +12,7 @@ import os
 import token
 import user
 import feedparser
-import owners
+#import owners
 #import re
 import logging
 import commands
@@ -39,13 +39,6 @@ def get_feed(url):
     for x in range(y):
         lines.append('- [{}]({})'.format(feed['items'][x]['title'].replace(']', ':').replace('[', '').encode('utf-8'), feed['items'][x]['link']))
     return '\n'.join(lines)
-#    for x in range(y):
-#        lines.append(
-#        u'-&gt <a href="{1}">{0}</a>.'.format(
-#        u'' + feed[ "items" ][x][ "title" ],
-#        u'' + feed[ "items" ][x][ "link" ]))
-#    return u'' + '\n'.join(lines)
-
 #######################################
 
 #Functions
@@ -76,7 +69,7 @@ def command_acerca(m):
 @bot.message_handler(commands=['help'])
 def command_ayuda(m):
     cid = m.chat.id
-    bot.send_message( cid, "Comandos Disponibles:\n /roll\n /id\n /support\n /ayuda\n /acerca\n /feed\n /neofeed\n") #
+    bot.send_message( cid, "Comandos Disponibles:\n /roll\n /id\n /support\n /help\n /about\n /feed\n /neofeed\n") #
 
 @bot.message_handler(commands=['roll'])
 def command_roll(m):
@@ -120,13 +113,13 @@ def neo_feed(m):
     
 ###############################################################################
 #Specials functions
-def send_message_checking_permission(m, response):
-    cid = m.chat.id
-    uid = m.from_user.id
-    if uid != user.user_id:
-        bot.send_message(cid, "You can't use the bot")
-        return
-    bot.send_message(cid, response)
+#def send_message_checking_permission(m, response):
+#    cid = m.chat.id
+#    uid = m.from_user.id
+#    if uid != user.user_id:
+#        bot.send_message(cid, "You can't use the bot")
+#        return
+#    bot.send_message(cid, response)
 
 @bot.message_handler(func=lambda m: True)
 def response(m):

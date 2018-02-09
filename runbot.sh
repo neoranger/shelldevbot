@@ -1,7 +1,7 @@
 #!/bin/bash
 while true
 do
-python2 /home/pi/Documents/git/neobot/shelldevbot.py
+python2 /home/pi/Documents/git/shelldevbot/shelldevbot.py
 echo "¡The bot is crashed!"
 echo "Rebooting in:"
 for i in 1
