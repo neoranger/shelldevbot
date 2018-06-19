@@ -103,14 +103,19 @@ def command_help(message):
     markup.row(itembtnblog)
     markup.row(itembtnrepo)
     bot.send_message(message.chat.id, "Choose an option:", reply_markup=markup)
-   
+
 @bot.message_handler(commands=['neofeed'])
 def neo_feed(m):
     cid = m.chat.id
     url = str("https://neositelinux.com/feed.xml")
     print (url)
     bot.send_message(cid, get_feed(url),disable_web_page_preview=True,parse_mode="markdown")
-    
+
+@bot.message_handler(commands=['command_line_tutorial'])
+def command_line_tutorial(m):
+    cid = m.chat.id
+    bot.send_message( cid, 'https://www.youtube.com/playlist?list=PLS1QulWo1RIb9WVQGJ_vh-RQusbZgO_A')
+
 ###############################################################################
 #Specials functions
 #def send_message_checking_permission(m, response):
