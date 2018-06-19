@@ -69,7 +69,7 @@ def command_acerca(m):
 @bot.message_handler(commands=['help'])
 def command_ayuda(m):
     cid = m.chat.id
-    bot.send_message( cid, "Comandos Disponibles:\n /roll\n /id\n /support\n /help\n /about\n /feed\n /neofeed\n") #
+    bot.send_message( cid, "Comandos Disponibles:\n /roll\n /id\n /command_line_tutorial\n /support\n /help\n /about\n /feed\n /neofeed\n") #
 
 @bot.message_handler(commands=['roll'])
 def command_roll(m):
