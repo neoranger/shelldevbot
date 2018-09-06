@@ -10,6 +10,6 @@ do
 echo "$i..."
 done
 echo "###########################################"
-echo "#Bot is restarting now                    #"
+echo "#ShellDevBot is restarting now            #"
 echo "###########################################"
 done
