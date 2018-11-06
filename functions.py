@@ -127,6 +127,14 @@ def command_line_tutorial(m):
     cid = m.chat.id
     bot.send_message( cid, 'https://www.youtube.com/playlist?list=PLS1QulWo1RIb9WVQGJ_vh-RQusbZgO_A')
 
+@bot.message_handler(commands=['kick'])
+def command_kick_user(m):
+        cid = m.chat.id
+        uid = m.from_user.id
+        if bot.get_chat_member(cid, uid).status in ["administrator", "creator"] and bot.get_chat_member(cid, m.reply_to_message.from_user.id).status not in ["administrator", "creator"]:
+           bot.send_message(cid, 'Hasta la vista, Baby')
+           bot.kick_chat_member(cid, m.reply_to_message.from_user.id)
+
 ###############################################################################
 #Specials functions
 #def send_message_checking_permission(m, response):
